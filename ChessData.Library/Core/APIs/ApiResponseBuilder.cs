@@ -27,10 +27,6 @@ namespace ChessData.Library.Core.APIs
         protected async Task<ApiResponse<T?>> BuildApiResponse<T>(string endpoint)
         {
             var response = new ApiResponse<T?>();
-            JsonSerializerOptions options = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = SnakeCaseNamingPolicy.Instance
-            };
 
             try
             {

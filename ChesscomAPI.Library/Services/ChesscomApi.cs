@@ -1,5 +1,6 @@
 ﻿using ChesscomAPI.Library.Constants;
 using ChesscomAPI.Library.DTOs.Players;
+using ChesscomAPI.Library.DTOs.Streamers;
 using ChesscomAPI.Library.Interfaces;
 using ChesscomAPI.Library.Models;
 using System.Net;
@@ -20,6 +21,8 @@ namespace ChesscomAPI.Library.Services
         {
             _httpClient = httpClient;
         }
+
+        #region Player Endpoints
 
         /// <summary>
         /// Get additional details about a player in a game.
@@ -57,6 +60,22 @@ namespace ChesscomAPI.Library.Services
             return await BuildApiResponse<GetPlayerStatsDataResponse?>($"{EndpointConstants.GET_PLAYER_STATS_DATA(playerName)}");
         }
 
+        #endregion
+
+        #region Streamer Endpoints
+
+        /// <summary>
+        /// Displays information about top 50 player for daily and live games, tactics and lessons.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<ApiResponse<GetStreamersResponse?>> GetStreamers()
+        {
+            return await BuildApiResponse<GetStreamersResponse?>($"{EndpointConstants.GET_STREAMERS}");
+        }
+
+        #endregion
+
+        #region Private Methods
         /// <summary>
         /// Builds our Api response
         /// </summary>
@@ -87,5 +106,8 @@ namespace ChesscomAPI.Library.Services
             }
             return response;
         }
+
+        #endregion
     }
+
 }

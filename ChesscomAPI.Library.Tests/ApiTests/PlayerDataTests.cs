@@ -1,7 +1,7 @@
 using ChesscomAPI.Library.DTOs.Players;
 using ChesscomAPI.Library.Services;
 
-namespace ChesscomAPI.Library.Tests
+namespace ChesscomAPI.Library.Tests.ApiTests
 {
     /// <summary>
     /// Tests player specific elements of our API Wrapper
@@ -42,7 +42,7 @@ namespace ChesscomAPI.Library.Tests
             //Assert
 
             Assert.True(
-                expectedPlayerResult.PlayerId == playerData.ResponseData.PlayerId 
+                expectedPlayerResult.PlayerId == playerData.ResponseData.PlayerId
                 && expectedPlayerResult.Id == playerData.ResponseData.Id
                 && expectedPlayerResult.Url == playerData.ResponseData.Url
                 && expectedPlayerResult.Username == playerData.ResponseData.Username);

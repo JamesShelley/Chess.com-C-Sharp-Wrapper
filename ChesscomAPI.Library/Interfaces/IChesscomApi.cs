@@ -1,4 +1,5 @@
 ﻿using ChesscomAPI.Library.DTOs.Players;
+using ChesscomAPI.Library.DTOs.Streamers;
 using ChesscomAPI.Library.Models;
 
 namespace ChesscomAPI.Library.Interfaces
@@ -32,6 +33,8 @@ namespace ChesscomAPI.Library.Interfaces
         #endregion
 
         #region Streamers
+
+        Task<ApiResponse<GetStreamersResponse?>> GetStreamers();
 
         #endregion
 

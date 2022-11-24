@@ -11,10 +11,17 @@ Status: Active Development, expect constant breaking changes until a stable rele
 ## Usage/Examples
 
 ### Register the client 
-Adds a IHttpClientFactory to your service collection and configures a binding to our IChesscomApi interface
+Adds a IHttpClientFactory to your service collection and configures bindings to relevant interfaces
 ```
 builder.Services.AddChessDataServices();
 ```
+
+Current work in progress:
+```
+ChessData.Library.Interfaces.IChesscomApi
+ChessData.Library.Interfaces.ILiChessApi
+```
+
 ### Example DI use
 ```
 public class TestController 

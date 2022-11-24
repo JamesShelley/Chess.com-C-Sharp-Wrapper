@@ -119,7 +119,7 @@ namespace ChesscomAPI.Library.Core
             catch (Exception ex)
             {
                 response.ResponseStatusCode = HttpStatusCode.InternalServerError;
-                response.ResponseMessage = $"Error {ex.InnerException?.Message}";
+                response.ResponseMessage = $"Error {ex.Message}";
             }
             return response;
         }

@@ -58,5 +58,14 @@ namespace ChesscomAPI.Library.Tests.ApiTests
             Assert.True(playerData.ResponseData?.Finished?.Any());
         }
 
+        [Fact]
+        public async Task GetPlayerStats_Good_Name_Gives_Valid_Data()
+        {
+            //Act
+            var playerData = await chessApi.GetPlayerStatsData("erik");
+            //Assert
+            Assert.True(playerData.ResponseStatusCode == System.Net.HttpStatusCode.OK);
+        }
+
     }
 }

@@ -48,5 +48,15 @@ namespace ChesscomAPI.Library.Tests.ApiTests
                 && expectedPlayerResult.Username == playerData.ResponseData.Username);
         }
 
+        [Fact]
+        public async Task GetPlayerTournaments_Good_Name_Gives_Valid_Data()
+        {
+            //Act
+            var playerData = await chessApi.GetPlayerTournaments("erik");
+            //Assert
+
+            Assert.True(playerData.ResponseData?.Finished?.Any());
+        }
+
     }
 }

@@ -62,6 +62,17 @@ namespace ChesscomAPI.Library.Services
             return await BuildApiResponse<GetPlayerStatsDataResponse?>($"{EndpointConstants.GET_PLAYER_STATS_DATA(playerName)}");
         }
 
+        /// <summary>
+        /// List of tournaments the player is registered, is attending or has attended in the past.
+        /// </summary>
+        /// <param name="playerName">The name of the player who you want statistics of.</param>
+        /// <returns>A <c>PlayerDataDetailsDto</c> object</returns>
+        public async Task<ApiResponse<GetPlayerTournamentsResponse?>> GetPlayerTournaments(string playerName)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(playerName, nameof(playerName));
+            return await BuildApiResponse<GetPlayerTournamentsResponse?>($"{EndpointConstants.GET_PLAYER_TOURNAMENTS(playerName)}");
+        }
+
         #endregion
 
         #region Streamer Endpoints

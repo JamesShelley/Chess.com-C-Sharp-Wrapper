@@ -10,6 +10,12 @@
             return $"{GET_PLAYER_PROFILE_DATA}/{name}/stats";
         }
 
+        internal static string GET_PLAYER_TOURNAMENTS(string name)
+        {
+            return $"{GET_PLAYER_PROFILE_DATA}/{name}/tournaments";
+        }
+
+
         internal static string GET_STREAMERS = "/pub/streamers";
     }
 }

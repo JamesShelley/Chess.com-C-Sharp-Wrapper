@@ -10,6 +10,8 @@ namespace ChesscomAPI.Library.Interfaces
         Task<ApiResponse<GetPlayerProfileDataResponse?>> GetPlayerProfileData(string playerName);
         Task<ApiResponse<GetTitledPlayersResponse?>> GetTitledPlayers(string title);
         Task<ApiResponse<GetPlayerStatsDataResponse?>> GetPlayerStatsData(string playerName);
+        Task<ApiResponse<GetPlayerTournamentsResponse?>> GetPlayerTournaments(string playerName);
+
         #endregion
 
         #region Clubs

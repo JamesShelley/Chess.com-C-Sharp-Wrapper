@@ -18,7 +18,14 @@ namespace ChessData.Library.Core.APIs
     /// </remarks>
     internal sealed class ChesscomApi : ApiResponseBuilder, IChesscomApi
     {
-        public ChesscomApi(HttpClient httpClient) : base(httpClient) { }
+        
+        //Chess.com API works with snakecase
+        static JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = SnakeCaseNamingPolicy.Instance
+        };
+
+        public ChesscomApi(HttpClient httpClient) : base(httpClient,options) { }
 
         #region Player Endpoints
 

@@ -10,10 +10,12 @@ namespace ChessData.Library.Core.APIs
     internal class ApiResponseBuilder
     {
         private readonly HttpClient _httpClient;
+        private readonly JsonSerializerOptions _serializerOptions;
 
-        internal ApiResponseBuilder(HttpClient client)
+        internal ApiResponseBuilder(HttpClient client, JsonSerializerOptions serializerOptions)
         {
             _httpClient = client;
+            _serializerOptions = serializerOptions;
         }
 
         /// <summary>
@@ -36,7 +38,7 @@ namespace ChessData.Library.Core.APIs
                 apiResponse.EnsureSuccessStatusCode();
                 response.ResponseStatusCode = apiResponse.StatusCode;
                 response.ResponseMessage = apiResponse.ReasonPhrase;
-                response.ResponseData = await apiResponse.Content.ReadFromJsonAsync<T>(options);
+                response.ResponseData = await apiResponse.Content.ReadFromJsonAsync<T>(_serializerOptions);
                 response.RawResponse = await apiResponse.Content.ReadAsStringAsync();
             }
             catch (HttpRequestException ex)

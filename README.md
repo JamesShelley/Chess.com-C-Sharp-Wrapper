@@ -3,6 +3,8 @@
 
 Status: Active Development, expect constant breaking changes until a stable release!
 
+[![.NET](https://github.com/JamesShelley/ChessData/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/JamesShelley/ChessData/actions/workflows/dotnet.yml)
+
 ## Current Plan: 
 - Full Wrapper around the Chess.com API
 - Full Wrapper around the LiChess API

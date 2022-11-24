@@ -2,6 +2,9 @@
 
 namespace ChesscomAPI.Library.Tests.ApiTests
 {
+    /// <summary>
+    /// Tests implementation of streamer specific chess.com api endpoints
+    /// </summary>
     public sealed class StreamerTests
     {
         private readonly ChesscomApi chessApi = new(new HttpClient

@@ -11,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Register our client
 builder.Services.AddChesscomClient();
 
 var app = builder.Build();
@@ -38,7 +40,7 @@ app.MapGet("/player", async (IChesscomApi api, HttpContext httpContext, string n
 //Example -> get all grandmasters
 app.MapGet("/title", async (IChesscomApi api, HttpContext httpContext, string title) =>
 {
-    var response = await api.GetTitledPlayers(ChessTitles.GRANDMASTER);
+    var response = await api.GetTitledPlayers(title);
     if (response == null)
     {
         return Results.NotFound();
@@ -46,8 +48,8 @@ app.MapGet("/title", async (IChesscomApi api, HttpContext httpContext, string ti
     return Results.Ok(response);
 });
 
-//Example -> get streams
-app.MapGet("/streamers", async (IChesscomApi api, HttpContext httpContext, string title) =>
+//Example -> get streamers
+app.MapGet("/streamers", async (IChesscomApi api, HttpContext httpContext) =>
 {
     var response = await api.GetStreamers();
     if (response == null)

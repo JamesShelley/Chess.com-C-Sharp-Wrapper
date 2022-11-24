@@ -1,6 +1,8 @@
 ﻿using ChesscomAPI.Library.Interfaces;
 using ChesscomAPI.Library.Services;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace ChesscomAPI.Library.Extensions
 {
@@ -12,7 +14,8 @@ namespace ChesscomAPI.Library.Extensions
             {
                 client.Timeout = TimeSpan.FromSeconds(60);
                 client.BaseAddress = new Uri("https://api.chess.com");
-                client.DefaultRequestHeaders.Add("Library", "C# Chess.com API Client Wrapper");
+                client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ChessCom-CSharp-API-Wrapper", "v0.1"));
+                client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("(+https://github.com/JamesShelley/Chess.com-C-Sharp-Wrapper)"));
             });
         }
     }

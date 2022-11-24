@@ -1,4 +1,10 @@
 
+# Dot Chess - C# chess.com API Wrapper
+
+Status: Active Development, expect constant breaking changes until a stable release!
+
+
+
 ## Usage/Examples
 
 ### Register the client 
@@ -25,3 +31,4 @@ public class TestController
 
 }
 ```
+

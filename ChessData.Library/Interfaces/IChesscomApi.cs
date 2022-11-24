@@ -1,4 +1,5 @@
-﻿using ChessData.Library.DTOs.APIs.Chesscom.Players;
+﻿using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
+using ChessData.Library.DTOs.APIs.Chesscom.Players;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
 using ChessData.Library.Models;
 
@@ -16,6 +17,7 @@ namespace ChessData.Library.Interfaces
         #endregion
 
         #region Clubs
+        Task<ApiResponse<GetClubDetailsResponse?>> GetClubDetails(string clubName);
 
         #endregion
 

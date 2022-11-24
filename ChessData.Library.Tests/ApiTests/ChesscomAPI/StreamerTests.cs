@@ -4,7 +4,7 @@ using ChessData.Library.Interfaces;
 namespace ChessData.Library.Tests.ApiTests
 {
     /// <summary>
-    /// Tests implementation of streamer specific chess.com api endpoints
+    /// Tests specific to chess.com api club endpoints
     /// </summary>
     public sealed class StreamerTests
     {
@@ -14,10 +14,15 @@ namespace ChessData.Library.Tests.ApiTests
             BaseAddress = new Uri("https://api.chess.com")
         });
 
+        /// <summary>
+        /// Checks GetStreamers correctly returns data from https://api.chess.com/pub/streamers
+        /// </summary>
         [Fact]
         public async Task GetStreamers_Returns_Valid_Results()
         {
             var streamers = await chessApi.GetStreamers();
+            Assert.NotNull(streamers);
+            Assert.True(streamers.ResponseStatusCode == System.Net.HttpStatusCode.OK);
             Assert.True(streamers.ResponseData?.Streamers?.Any());
         }
     }

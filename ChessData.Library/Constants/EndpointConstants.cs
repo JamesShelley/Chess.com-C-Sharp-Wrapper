@@ -22,6 +22,11 @@
                 return $"{GET_PLAYER_PROFILE_DATA}/{name}/games";
             }
 
+            internal static string GET_CLUB_DETAILS(string clubName)
+            {
+                return $"/pub/club/{clubName}";
+            }
+
             internal static string GET_STREAMERS = "/pub/streamers";
         }
 

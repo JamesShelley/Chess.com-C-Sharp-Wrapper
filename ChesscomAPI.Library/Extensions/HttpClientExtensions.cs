@@ -1,5 +1,5 @@
-﻿using ChesscomAPI.Library.Interfaces;
-using ChesscomAPI.Library.Services;
+﻿using ChesscomAPI.Library.Core;
+using ChesscomAPI.Library.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
 using System.Net.Http.Headers;

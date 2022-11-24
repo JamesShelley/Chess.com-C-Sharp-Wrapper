@@ -1,5 +1,5 @@
 ﻿using ChesscomAPI.Library.Constants;
-using ChesscomAPI.Library.Core;
+using ChesscomAPI.Library.Core.Json;
 using ChesscomAPI.Library.DTOs.Players;
 using ChesscomAPI.Library.DTOs.Streamers;
 using ChesscomAPI.Library.Interfaces;
@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
 
-namespace ChesscomAPI.Library.Services
+namespace ChesscomAPI.Library.Core
 {
     /// <summary>
     /// Our service class which interacts with the Chess.com api

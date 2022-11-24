@@ -1,5 +1,5 @@
+using ChesscomAPI.Library.Core;
 using ChesscomAPI.Library.DTOs.Players;
-using ChesscomAPI.Library.Services;
 
 namespace ChesscomAPI.Library.Tests.ApiTests
 {

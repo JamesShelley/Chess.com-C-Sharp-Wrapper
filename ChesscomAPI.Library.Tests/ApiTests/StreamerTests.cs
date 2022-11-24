@@ -1,4 +1,4 @@
-﻿using ChesscomAPI.Library.Services;
+﻿using ChesscomAPI.Library.Core;
 
 namespace ChesscomAPI.Library.Tests.ApiTests
 {

@@ -26,7 +26,7 @@ public class TestController
     public IActionResult SomeMethod()
     {
         var playerData = _chessApiClient.GetPlayerProfileData("hikaru");
-        return Ok(playerData)'
+        return Ok(playerData);
     }
 
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChesscomAPI.Library", "ChesscomAPI.Library\ChesscomAPI.Library.csproj", "{CFBFBD0F-1513-4E92-93CF-C6BBFC997D45}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChesscomAPI.MinimalAPIExample", "ChesscomAPI.MinimalAPI\ChesscomAPI.MinimalAPIExample.csproj", "{567479EF-2798-47F7-BC8D-AF8F9834CAD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChesscomAPI.MinimalAPIExample", "ChesscomAPI.MinimalApiExample\ChesscomAPI.MinimalAPIExample.csproj", "{567479EF-2798-47F7-BC8D-AF8F9834CAD2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChesscomAPI.Library.Tests", "ChesscomAPI.Library.Tests\ChesscomAPI.Library.Tests.csproj", "{30A293B7-87E2-47A6-BA48-DCCB63B39EA2}"
 EndProject

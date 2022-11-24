@@ -24,6 +24,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//Example -> get player profile data
 app.MapGet("/player", async (IChesscomApi api, HttpContext httpContext, string name) => 
 {
     var response = await api.GetPlayerProfileData(name);
@@ -34,9 +35,21 @@ app.MapGet("/player", async (IChesscomApi api, HttpContext httpContext, string n
     return Results.Ok(response);
 });
 
+//Example -> get all grandmasters
 app.MapGet("/title", async (IChesscomApi api, HttpContext httpContext, string title) =>
 {
     var response = await api.GetTitledPlayers(ChessTitles.GRANDMASTER);
+    if (response == null)
+    {
+        return Results.NotFound();
+    }
+    return Results.Ok(response);
+});
+
+//Example -> get streams
+app.MapGet("/streamers", async (IChesscomApi api, HttpContext httpContext, string title) =>
+{
+    var response = await api.GetStreamers();
     if (response == null)
     {
         return Results.NotFound();

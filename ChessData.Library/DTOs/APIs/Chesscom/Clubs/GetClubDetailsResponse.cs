@@ -2,7 +2,7 @@
 
 namespace ChessData.Library.DTOs.APIs.Chesscom.Clubs
 {
-    public class GetClubDetailsResponse
+    public sealed class GetClubDetailsResponse
     {
         [JsonPropertyName("@id")]
         public string? Id { get; set; }

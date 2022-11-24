@@ -1,6 +1,6 @@
 ﻿namespace ChessData.Library.DTOs.APIs.Chesscom.Players
 {
-    public sealed class GetPlayerGameArchivesResponse
+    public sealed class GetPlayerMonthlyArchivesResponse
     {
 
 

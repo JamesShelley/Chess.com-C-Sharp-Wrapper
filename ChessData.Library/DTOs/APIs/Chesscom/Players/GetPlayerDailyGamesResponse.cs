@@ -1,6 +1,6 @@
 ﻿namespace ChessData.Library.DTOs.APIs.Chesscom.Players
 {
-    public class GetPlayerDailyGamesResponse
+    public sealed class GetPlayerDailyGamesResponse
     {
         public List<PlayerGameDto>? Games { get; set; }
 

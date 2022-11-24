@@ -1,10 +1,12 @@
 ﻿using ChesscomAPI.Library.Constants;
+using ChesscomAPI.Library.Core;
 using ChesscomAPI.Library.DTOs.Players;
 using ChesscomAPI.Library.DTOs.Streamers;
 using ChesscomAPI.Library.Interfaces;
 using ChesscomAPI.Library.Models;
 using System.Net;
 using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace ChesscomAPI.Library.Services
 {
@@ -85,6 +87,10 @@ namespace ChesscomAPI.Library.Services
         private async Task<ApiResponse<T>> BuildApiResponse<T>(string endpoint)
         {
             var response = new ApiResponse<T?>();
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = SnakeCaseNamingPolicy.Instance
+            };
 
             try
             {
@@ -92,7 +98,7 @@ namespace ChesscomAPI.Library.Services
                 apiResponse.EnsureSuccessStatusCode();
                 response.ResponseStatusCode = apiResponse.StatusCode;
                 response.ResponseMessage = apiResponse.ReasonPhrase;
-                response.ResponseData = await apiResponse.Content.ReadFromJsonAsync<T>();
+                response.ResponseData = await apiResponse.Content.ReadFromJsonAsync<T>(options);
             }
             catch (HttpRequestException ex)
             {

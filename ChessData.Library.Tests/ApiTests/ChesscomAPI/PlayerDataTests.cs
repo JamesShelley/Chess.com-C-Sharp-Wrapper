@@ -88,6 +88,30 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         }
 
         [Fact]
+        public async Task GetPlayerStatsData_Returns_Valid_Data()
+        {
+            // Act
+            var playerStats = await chesscomApi.GetPlayerStatsData("erik");
+
+            // Assert
+            Assert.NotNull(playerStats);
+            Assert.Equal(playerStats.ResponseStatusCode, System.Net.HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task GetPlayerMonthlyArchives_Returns_Valid_Data()
+        {
+            // Act
+            var playerGames = await chesscomApi.GetPlayerMonthlyGameArchives("erik","2009","10");
+
+            // Assert
+            Assert.NotNull(playerGames);
+            Assert.NotNull(playerGames.ResponseData?.Games);
+            Assert.Equal(playerGames.ResponseData?.Games?.Count, 46);
+            Assert.Equal(playerGames.ResponseStatusCode, System.Net.HttpStatusCode.OK);
+        }
+
+        [Fact]
         public async Task GetTitledPlayers_Empty_Title_Returns_Error()
         {
             await Assert.ThrowsAsync<ArgumentException>(async () => await chesscomApi.GetTitledPlayers(string.Empty));

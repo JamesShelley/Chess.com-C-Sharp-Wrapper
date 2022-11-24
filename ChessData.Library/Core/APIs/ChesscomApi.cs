@@ -88,6 +88,22 @@ namespace ChessData.Library.Core.APIs
             return await BuildApiResponse<GetPlayerDailyGamesResponse?>($"{EndpointConstants.ChessCom.GET_PLAYER_DAILY_GAMES(playerName)}");
         }
 
+        /// <summary>
+        /// Array of Live and Daily Chess games that a player has finished.
+        /// </summary>
+        /// <param name="playerName">The name of the player who you want statistics of.</param>
+        /// <param name="year">The year, in format YYYY, e.g. 2020</param>
+        /// <param name="month">The month, in format MM, e.g. 12</param>
+        /// <returns></returns>
+        public async Task<ApiResponse<GetPlayerMonthlyArchivesResponse?>> GetPlayerMonthlyGameArchives(string playerName, string year, string month)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(playerName, nameof(playerName));
+            ArgumentException.ThrowIfNullOrEmpty(year, nameof(year));
+            ArgumentException.ThrowIfNullOrEmpty(month, nameof(month));
+
+            return await BuildApiResponse<GetPlayerMonthlyArchivesResponse?>($"{EndpointConstants.ChessCom.GET_PLAYER_MONTHLY_ARCHIVES(playerName,year,month)}");
+        }
+
         #endregion
 
         #region Streamer Endpoints

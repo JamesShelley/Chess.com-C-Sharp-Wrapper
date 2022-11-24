@@ -13,6 +13,7 @@ namespace ChessData.Library.Interfaces
         Task<ApiResponse<GetPlayerStatsDataResponse?>> GetPlayerStatsData(string playerName);
         Task<ApiResponse<GetPlayerTournamentsResponse?>> GetPlayerTournaments(string playerName);
         Task<ApiResponse<GetPlayerDailyGamesResponse?>> GetPlayerDailyGames(string playerName);
+        Task<ApiResponse<GetPlayerMonthlyArchivesResponse?>> GetPlayerMonthlyGameArchives(string playerName, string year, string month);
 
         #endregion
 

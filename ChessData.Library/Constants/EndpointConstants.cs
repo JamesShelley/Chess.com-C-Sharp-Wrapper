@@ -28,6 +28,11 @@
             }
 
             internal static string GET_STREAMERS = "/pub/streamers";
+
+            internal static string GET_PLAYER_MONTHLY_ARCHIVES(string playerName, string YYYY, string MM)
+            {
+                return $"/pub/player/{playerName}/games/{YYYY}/{MM}";
+            }
         }
 
         internal static class LiChess

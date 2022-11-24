@@ -1,10 +1,12 @@
-﻿namespace ChessData.Library.DTOs.APIs.Chesscom.Players
+﻿using ChessData.Library.DTOs.APIs.Chesscom.Common;
+
+namespace ChessData.Library.DTOs.APIs.Chesscom.Players
 {
     public sealed class GetPlayerDailyGamesResponse
     {
         public List<PlayerGameDto>? Games { get; set; }
 
-        public class PlayerGameDto
+        public class PlayerGameDto : IBaseChessGameProperties
         {
             public string? Url { get; set; }
             public long MoveBy { get; set; }

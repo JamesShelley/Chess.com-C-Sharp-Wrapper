@@ -24,7 +24,7 @@ namespace ChessData.Library.Core.APIs
         /// <returns>An <c>ApiResponse<typeparamref name="T"/></c>object</returns>
         protected async Task<ApiResponse<T?>> BuildApiResponse<T>(string endpoint)
         {
-            var response = new ApiResponse<T?>();
+            var response = new ApiResponse<T?> { RequestedUrl = endpoint };
 
             try
             {

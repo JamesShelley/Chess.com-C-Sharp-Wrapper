@@ -12,6 +12,11 @@ namespace ChessData.Library.Models
 
         //The response message we get back from the chess.com api endpoint
         public string? ResponseMessage { get; set; }
+
+        //The raw json response we actually got back from the API
         public string? RawResponse { get; set; }
+        
+        //The endpoint we requested
+        public string? RequestedUrl { get; set; }
     }
 }

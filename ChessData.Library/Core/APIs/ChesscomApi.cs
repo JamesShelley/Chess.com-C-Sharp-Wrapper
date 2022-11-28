@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
 using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
+using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
 
 namespace ChessData.Library.Core.APIs
 {
@@ -138,6 +139,20 @@ namespace ChessData.Library.Core.APIs
         }
 
         #endregion
+
+        #region Leaderboard endpoints
+
+        /// <summary>
+        /// Displays information about top 50 player for daily and live games, tactics and lessons.
+        /// </summary>
+        /// <returns>A <c>GetLeaderboardsResponse</c></returns>
+        public async Task<ApiResponse<GetLeaderboardsResponse?>> GetLeaderboards()
+        {
+            return await BuildApiResponse<GetLeaderboardsResponse?>($"{EndpointConstants.ChessCom.GET_LEADERBOARDS}");
+        }
+
+        #endregion
+
     }
 
 }

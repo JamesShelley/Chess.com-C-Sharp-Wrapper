@@ -20,6 +20,7 @@ namespace ChessData.Library.Tests.ApiTests
         [Fact]
         public async Task GetStreamers_Returns_Valid_Results()
         {
+            Thread.Sleep(1000);
             var streamers = await chessApi.GetStreamers();
             Assert.NotNull(streamers);
             Assert.True(streamers.ResponseStatusCode == System.Net.HttpStatusCode.OK);

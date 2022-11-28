@@ -19,6 +19,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetClubDetails_Returns_Valid_Data()
         {
+            Thread.Sleep(1000);
             var clubData = await chessApi.GetClubDetails("chess-com-developer-community");
 
             Assert.NotNull(clubData);
@@ -32,6 +33,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetClubMembers_Returns_Valid_Data()
         {
+            Thread.Sleep(1000);
             var clubMembers = await chessApi.GetClubMembers("chess-com-developer-community");
             Assert.NotNull(clubMembers);
             Assert.True(clubMembers.ResponseStatusCode == System.Net.HttpStatusCode.OK);

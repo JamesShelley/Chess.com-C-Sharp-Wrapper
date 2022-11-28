@@ -24,6 +24,8 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetLeaderboardsResponse_Returns_Valid_Data()
         {
+            Thread.Sleep(1000);
+
             var leaderboardsData = await chessApi.GetLeaderboards();
 
             Assert.NotNull(leaderboardsData);

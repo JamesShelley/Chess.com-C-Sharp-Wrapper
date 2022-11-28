@@ -4,13 +4,9 @@ using ChessData.Library.DTOs.APIs.Chesscom.Players;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
 using ChessData.Library.Interfaces;
 using ChessData.Library.Models;
-using System.Net;
-using System.Net.Http.Json;
 using System.Text.Json;
 using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
 using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
-using static System.Reflection.Metadata.BlobBuilder;
-using System;
 
 namespace ChessData.Library.Core.APIs
 {
@@ -105,6 +101,17 @@ namespace ChessData.Library.Core.APIs
             ArgumentException.ThrowIfNullOrEmpty(month, nameof(month));
 
             return await BuildApiResponse<GetPlayerMonthlyArchivesResponse?>($"{EndpointConstants.ChessCom.GET_PLAYER_MONTHLY_ARCHIVES(playerName,year,month)}");
+        }
+
+        /// <summary>
+        /// List of clubs the player is a member of, with joined date and last activity date.
+        /// </summary>
+        /// <param name="playerName">The name of the player.</param>
+        /// <returns>A <c>PlayerDataDetailsDto</c> object</returns>
+        public async Task<ApiResponse<GetPlayerClubsResponse?>> GetPlayerClubs(string playerName)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(playerName, nameof(playerName));
+            return await BuildApiResponse<GetPlayerClubsResponse?>($"{EndpointConstants.ChessCom.GET_PLAYER_CLUBS(playerName)}");
         }
 
         #endregion

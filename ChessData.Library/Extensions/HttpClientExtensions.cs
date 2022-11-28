@@ -13,8 +13,8 @@ namespace ChessData.Library.Extensions
             {
                 client.Timeout = options != null ? options.ClientTimeout != 0 ? TimeSpan.FromSeconds(options.ClientTimeout) : TimeSpan.FromSeconds(60) : TimeSpan.FromSeconds(60);
                 client.BaseAddress = new Uri("https://api.chess.com");
-                client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ChessCom-CSharp-API-Wrapper", "v0.1"));
-                client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("(+https://github.com/JamesShelley/Chess.com-C-Sharp-Wrapper)"));
+                client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ChessData", "v0.1"));
+                client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("(+https://github.com/JamesShelley/ChessData)"));
                 if (options != null && !string.IsNullOrEmpty(options.UserAgent))
                 {
                     client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(options.UserAgent));
@@ -27,8 +27,8 @@ namespace ChessData.Library.Extensions
                 {
                     client.Timeout = options.ClientTimeout != 0 ? TimeSpan.FromSeconds(options.ClientTimeout) : TimeSpan.FromSeconds(60);
                     client.BaseAddress = new Uri("https://lichess.org/api");
-                    client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ChessCom-CSharp-API-Wrapper", "v0.1"));
-                    client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("(+https://github.com/JamesShelley/Chess.com-C-Sharp-Wrapper)"));
+                    client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ChessData", "v0.1"));
+                    client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("(+https://github.com/JamesShelley/ChessData)"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", options.LichessPersonalAccessToken);
                     if (options != null && !string.IsNullOrEmpty(options.UserAgent))
                     {

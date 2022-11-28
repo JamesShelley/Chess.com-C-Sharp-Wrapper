@@ -131,5 +131,17 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
             Thread.Sleep(1000);
             await Assert.ThrowsAsync<ArgumentException>(async () => await chesscomApi.GetTitledPlayers(string.Empty));
         }
+
+        [Fact]
+        public async Task GetPlayerClubs_Returns_Valid_Data()
+        {
+            Thread.Sleep(1000);
+            var playerClubs = await chesscomApi.GetPlayerClubs("erik");
+
+            Assert.Equal(playerClubs.ResponseStatusCode, System.Net.HttpStatusCode.OK);
+            Assert.NotNull(playerClubs);
+            Assert.NotNull(playerClubs.ResponseData?.Clubs);
+            Assert.True(playerClubs.ResponseData?.Clubs?.Any());
+        }
     }
 }

@@ -23,6 +23,9 @@
 
             internal static string GET_PLAYER_DAILY_GAMES(string playerName) => $"{GET_PLAYER_PROFILE_DATA}/{playerName}/games";
 
+            internal static string GET_PLAYER_CLUBS(string playerName) => $"{GET_PLAYER_PROFILE_DATA}/{playerName}/clubs";
+
+
             internal static string GET_PLAYER_MONTHLY_ARCHIVES(string playerName, string YYYY, string MM) =>
           $"/pub/player/{playerName}/games/{YYYY}/{MM}";
 

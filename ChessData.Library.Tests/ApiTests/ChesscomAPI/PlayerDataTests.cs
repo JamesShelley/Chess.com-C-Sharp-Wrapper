@@ -7,6 +7,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
     /// <summary>
     /// Tests player specific elements of our API Wrapper
     /// </summary>
+    [Collection("ChessDotComApiTests")]
     public sealed class PlayerDataTests
     {
         private readonly ChesscomApi chesscomApi = new(new HttpClient
@@ -24,7 +25,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetPlayerProfileData_Good_Name_Gives_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             //Arrange
             var expectedPlayerResult = new GetPlayerProfileDataResponse
@@ -46,7 +47,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetPlayerTournaments_Good_Name_Gives_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             //Act
             var playerData = await chesscomApi.GetPlayerTournaments("erik");
@@ -60,7 +61,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetTitledPlayers_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             //Act
             var titledPlayers = await chesscomApi.GetTitledPlayers(ChessTitles.GRANDMASTER);
@@ -74,7 +75,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetPlayerDailyGames_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             // Act
             var playerGames = await chesscomApi.GetPlayerDailyGames("erik");
@@ -87,7 +88,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetPlayerTournaments_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             // Act
             var playerTournaments = await chesscomApi.GetPlayerTournaments("erik");
@@ -100,7 +101,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetPlayerStatsData_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             // Act
             var playerStats = await chesscomApi.GetPlayerStatsData("erik");
@@ -113,7 +114,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetPlayerMonthlyArchives_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             // Act
             var playerGames = await chesscomApi.GetPlayerMonthlyGameArchives("erik","2009","10");
@@ -128,14 +129,14 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetTitledPlayers_Empty_Title_Returns_Error()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             await Assert.ThrowsAsync<ArgumentException>(async () => await chesscomApi.GetTitledPlayers(string.Empty));
         }
 
         [Fact]
         public async Task GetPlayerClubs_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             var playerClubs = await chesscomApi.GetPlayerClubs("erik");
 
             Assert.Equal(playerClubs.ResponseStatusCode, System.Net.HttpStatusCode.OK);

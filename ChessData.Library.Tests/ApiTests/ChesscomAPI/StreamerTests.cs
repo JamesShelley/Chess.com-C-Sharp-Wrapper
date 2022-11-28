@@ -1,11 +1,11 @@
 ﻿using ChessData.Library.Core.APIs;
-using ChessData.Library.Interfaces;
 
 namespace ChessData.Library.Tests.ApiTests
 {
     /// <summary>
     /// Tests specific to chess.com api club endpoints
     /// </summary>
+    [Collection("ChessDotComApiTests")]
     public sealed class StreamerTests
     {
         private readonly ChesscomApi chessApi = new(new HttpClient
@@ -20,7 +20,7 @@ namespace ChessData.Library.Tests.ApiTests
         [Fact]
         public async Task GetStreamers_Returns_Valid_Results()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             var streamers = await chessApi.GetStreamers();
             Assert.NotNull(streamers);
             Assert.True(streamers.ResponseStatusCode == System.Net.HttpStatusCode.OK);

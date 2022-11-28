@@ -5,6 +5,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
     /// <summary>
     /// Tests specific to chess.com api club endpoints
     /// </summary>
+    [Collection("ChessDotComApiTests")]
     public class ClubTests
     {
         private readonly ChesscomApi chessApi = new(new HttpClient
@@ -19,7 +20,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetClubDetails_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             var clubData = await chessApi.GetClubDetails("chess-com-developer-community");
 
             Assert.NotNull(clubData);
@@ -33,7 +34,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
         [Fact]
         public async Task GetClubMembers_Returns_Valid_Data()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             var clubMembers = await chessApi.GetClubMembers("chess-com-developer-community");
             Assert.NotNull(clubMembers);
             Assert.True(clubMembers.ResponseStatusCode == System.Net.HttpStatusCode.OK);

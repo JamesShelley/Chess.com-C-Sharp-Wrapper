@@ -5,7 +5,7 @@ using ChessData.Library.Models;
 
 namespace ChessData.Library.Core.APIs
 {
-    internal class ApiResponseBuilder
+    internal abstract class ApiResponseBuilder
     {
         private readonly HttpClient _httpClient;
         private readonly JsonSerializerOptions _serializerOptions;

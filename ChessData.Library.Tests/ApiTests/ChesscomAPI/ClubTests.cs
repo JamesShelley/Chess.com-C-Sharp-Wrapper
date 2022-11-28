@@ -25,5 +25,16 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
             Assert.True(clubData.ResponseStatusCode == System.Net.HttpStatusCode.OK);
             Assert.True(clubData.ResponseData?.Id == "https://api.chess.com/pub/club/chess-com-developer-community");
         }
+
+        /// <summary>
+        /// Checks the GetClubMembers correctly returns data from https://api.chess.com/pub/club/chess-com-developer-community/members
+        /// </summary>
+        [Fact]
+        public async Task GetClubMembers_Returns_Valid_Data()
+        {
+            var clubMembers = await chessApi.GetClubMembers("chess-com-developer-community");
+            Assert.NotNull(clubMembers);
+            Assert.True(clubMembers.ResponseStatusCode == System.Net.HttpStatusCode.OK);
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace ChessData.Library.Interfaces
         #region Clubs
         Task<ApiResponse<GetClubDetailsResponse?>> GetClubDetails(string clubName);
 
+        Task<ApiResponse<GetClubMembersResponse?>> GetClubMembers(string clubName);
+
         #endregion
 
         #region Tournaments
@@ -47,7 +49,7 @@ namespace ChessData.Library.Interfaces
 
         #region Leaderboards
 
-        Task<ApiResponse<GetLeaderboardsResponse?>> GetLeaderboards()
+        Task<ApiResponse<GetLeaderboardsResponse?>> GetLeaderboards();
 
         #endregion
     }

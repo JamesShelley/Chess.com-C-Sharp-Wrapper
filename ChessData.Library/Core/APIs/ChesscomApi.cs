@@ -9,6 +9,8 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
 using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
+using static System.Reflection.Metadata.BlobBuilder;
+using System;
 
 namespace ChessData.Library.Core.APIs
 {
@@ -136,6 +138,26 @@ namespace ChessData.Library.Core.APIs
         {
             ArgumentException.ThrowIfNullOrEmpty(clubName, nameof(clubName));
             return await BuildApiResponse<GetClubDetailsResponse?>($"{EndpointConstants.ChessCom.GET_CLUB_DETAILS(clubName)}");
+        }
+
+        /// <summary>
+        /// List of club members (usernames and joined date timestamp), grouped by club-activity frequency. The club-activity is one of this actions:
+        /// - Viewing the club homepage
+        /// - Viewing the clubs news index or a specific news article(but not the notification message received that the news was published)
+        /// - Changing their club settings, including modifying their membership; for admins, this includes inviting or authorizing new members
+        /// - Viewing the club's tournament, team match, or votechess lists
+        /// - Viewing club membership lists or running a related search, or viewing the leaderboards for the club
+        /// </summary>
+        /// <param name="clubName">The name of the club</param>
+        /// <returns>An <c>ApiResponse<GetClubDetailsResponse></c> object</returns>
+        /// <remarks>
+        /// All club-based URLs use the club's "URL ID" to specify which club you want data for.
+        /// The url-ID is the same as found in the URL for the club's web page on www.chess.com. For example, the url-ID of the Chess.com Developer's Club is chess-com-developer-community
+        /// </remarks>
+        public async Task<ApiResponse<GetClubMembersResponse?>> GetClubMembers(string clubName)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(clubName, nameof(clubName));
+            return await BuildApiResponse<GetClubMembersResponse?>($"{EndpointConstants.ChessCom.GET_CLUB_MEMBERS(clubName)}");
         }
 
         #endregion

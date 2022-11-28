@@ -1,4 +1,5 @@
 ﻿using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
+using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
 using ChessData.Library.DTOs.APIs.Chesscom.Players;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
 using ChessData.Library.Models;
@@ -45,6 +46,8 @@ namespace ChessData.Library.Interfaces
         #endregion
 
         #region Leaderboards
+
+        Task<ApiResponse<GetLeaderboardsResponse?>> GetLeaderboards()
 
         #endregion
     }

@@ -39,12 +39,18 @@
 
             #endregion
 
-            #region STREAMER endpoints
+            #region STREAMER ENDPOINTS
 
             internal static string GET_STREAMERS = "/pub/streamers";
 
             #endregion
 
+            #region PUZZLE ENDPOINTS
+
+            internal static string GET_DAILY_PUZZLE = "/pub/puzzle";
+            internal static string GET_RANDOM_PUZZLE = "/pub/puzzle/random";
+
+            #endregion
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
 using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
 using ChessData.Library.DTOs.APIs.Chesscom.Players;
+using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
 using ChessData.Library.Models;
 
@@ -39,6 +40,9 @@ namespace ChessData.Library.Interfaces
         #endregion
 
         #region Daily puzzles
+
+        Task<ApiResponse<GetDailyPuzzleResponse?>> GetDailyPuzzle();
+        Task<ApiResponse<GetRandomPuzzleResponse?>> GetRandomPuzzle();
 
         #endregion
 

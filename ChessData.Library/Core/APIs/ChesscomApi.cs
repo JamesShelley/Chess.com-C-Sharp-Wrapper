@@ -7,6 +7,7 @@ using ChessData.Library.Models;
 using System.Text.Json;
 using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
 using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
+using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 
 namespace ChessData.Library.Core.APIs
 {
@@ -178,6 +179,29 @@ namespace ChessData.Library.Core.APIs
         public async Task<ApiResponse<GetLeaderboardsResponse?>> GetLeaderboards()
         {
             return await BuildApiResponse<GetLeaderboardsResponse?>($"{EndpointConstants.ChessCom.GET_LEADERBOARDS}");
+        }
+
+        #endregion
+
+        #region Puzzle endpoints
+
+        /// <summary>
+        /// Information about the daily puzzle found in www.chess.com .
+        /// </summary>
+        /// <returns>An <c>ApiResponse<GetDailyPuzzleResponse?> object</c></returns>
+        public async Task<ApiResponse<GetDailyPuzzleResponse?>> GetDailyPuzzle()
+        {
+            return await BuildApiResponse<GetDailyPuzzleResponse?>($"{EndpointConstants.ChessCom.GET_DAILY_PUZZLE}");
+        }
+
+        /// <summary>
+        /// Information about a randomly picked daily puzzle.
+        /// </summary>
+        /// <returns>An <c>ApiResponse<GetRandomPuzzleResponse?> object</c></returns>
+        /// <remarks>Notes: the puzzle doesn't change every request but has some caching latency (around 15 seconds). If you are going to publish the Daily Puzzle somewhere please remember to give credits to Chess.com by means of a clearly visibile text link that points to the url of the puzzle page.</remarks>
+        public async Task<ApiResponse<GetRandomPuzzleResponse?>> GetRandomPuzzle()
+        {
+            return await BuildApiResponse<GetRandomPuzzleResponse?>($"{EndpointConstants.ChessCom.GET_RANDOM_PUZZLE}");
         }
 
         #endregion

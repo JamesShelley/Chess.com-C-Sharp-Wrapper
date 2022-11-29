@@ -1,6 +1,6 @@
 ﻿using ChessData.Library.Constants;
 using ChessData.Library.Core.Json;
-using ChessData.Library.DTOs.APIs.LiChess.Profile;
+using ChessData.Library.DTOs.APIs.LiChess.Account;
 using ChessData.Library.Interfaces;
 using ChessData.Library.Models;
 using System.Text.Json;

@@ -1,4 +1,4 @@
-﻿using ChessData.Library.DTOs.APIs.LiChess.Profile;
+﻿using ChessData.Library.DTOs.APIs.LiChess.Account;
 using ChessData.Library.Models;
 
 namespace ChessData.Library.Interfaces

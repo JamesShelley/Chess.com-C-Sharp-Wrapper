@@ -5,8 +5,9 @@ namespace ChessData.Library.Interfaces
 {
     public interface ILiChessApi
     {
-        #region Profile
-        Task<ApiResponse<GetLiChessProfile?>> GetPlayerProfile();
+        #region ACCOUNT ENDPOINTS
+        Task<ApiResponse<GetMyLiChessProfile?>> GetMyProfile();
+        Task<ApiResponse<GetMyEmailAddressResponse?>> GetMyEmailAddress();
         #endregion
     }
 }

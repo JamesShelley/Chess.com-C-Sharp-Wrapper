@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChessData.Library.DTOs.APIs.LiChess.Profile
 {
-    public sealed class GetLiChessProfile
+    public sealed class GetMyLiChessProfile
     {
         public string? Id { get; set; }
         public string? Username { get; set; }

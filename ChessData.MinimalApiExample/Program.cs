@@ -65,7 +65,7 @@ app.MapGet("/streamers", async (IChesscomApi api, HttpContext httpContext) =>
 //Example -> Lichess Profile
 app.MapGet("/lichess/account", async (ILiChessApi api, HttpContext httpContext) =>
 {
-    var response = await api.GetPlayerProfile();
+    var response = await api.GetMyProfile();
     if (response == null)
     {
         return Results.NotFound();

@@ -17,9 +17,14 @@ namespace ChessData.Library.Core.APIs
 
         public LiChessApi(HttpClient httpClient) : base(httpClient, options) { }
 
-        public async Task<ApiResponse<GetLiChessProfile?>> GetPlayerProfile()
+        public async Task<ApiResponse<GetMyLiChessProfile?>> GetMyProfile()
         {
-            return await BuildApiResponse<GetLiChessProfile?>($"{EndpointConstants.LiChess.ACCOUNT}");
+            return await BuildApiResponse<GetMyLiChessProfile?>($"{EndpointConstants.LiChess.GET_MY_PROFILE}");
+        }
+
+        public async Task<ApiResponse<GetMyEmailAddressResponse?>> GetMyEmailAddress()
+        {
+            return await BuildApiResponse<GetMyEmailAddressResponse?>($"{EndpointConstants.LiChess.GET_MY_EMAIL_ADDRESS}");
         }
     }
 }

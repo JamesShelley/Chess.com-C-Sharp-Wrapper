@@ -59,7 +59,10 @@
 
         internal static class LiChess
         {
-            internal static string ACCOUNT = "/api/account";
+            #region ACCOUNT endpoints
+            internal static string GET_MY_PROFILE = "/api/account";
+            internal static string GET_MY_EMAIL_ADDRESS = "/api/account/email";
+            #endregion
         }
 
         #endregion

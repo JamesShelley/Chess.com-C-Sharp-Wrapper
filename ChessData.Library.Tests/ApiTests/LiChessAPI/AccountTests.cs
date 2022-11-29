@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace ChessData.Library.Tests.ApiTests.LiChessAPI
 {
+    [Collection("LichessApiTests")]
     public class AccountTests
     {
         private readonly string _oAuthToken;
@@ -48,7 +49,7 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
         }
 
         /// <summary>
-        /// Checks Get correctly returns data
+        /// Checks GetMyProfile correctly returns data
         /// </summary>
         [Fact]
         public async Task GetMyProfile_Returns_ValidData()
@@ -59,6 +60,18 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
             Assert.NotNull(lichessAcccount);
             Assert.True(lichessAcccount.ResponseStatusCode == System.Net.HttpStatusCode.OK);
             Assert.True(!string.IsNullOrEmpty(lichessAcccount.ResponseData?.Username));
+        }
+
+        /// <summary>
+        /// Checks GetMyPreferences correctly returns data
+        /// </summary>
+        [Fact]
+        public async Task GetMyPreferences_Returns_ValidData()
+        {
+            Thread.Sleep(3000);
+            var lichessPreferences = await lichessApi.GetMyPreferences();
+            Assert.NotNull(lichessPreferences);
+            Assert.True(lichessPreferences.ResponseStatusCode == System.Net.HttpStatusCode.OK);
         }
 
     }

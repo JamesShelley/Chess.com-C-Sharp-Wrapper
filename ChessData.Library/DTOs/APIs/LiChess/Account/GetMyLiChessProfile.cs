@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessData.Library.DTOs.APIs.LiChess.Profile
+namespace ChessData.Library.DTOs.APIs.LiChess.Account
 {
     public sealed class GetMyLiChessProfile
     {

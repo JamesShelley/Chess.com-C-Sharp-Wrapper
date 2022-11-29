@@ -1,14 +1,7 @@
 ﻿using ChessData.Library.Core.APIs;
-using ChessData.Library.Tests.Configuration;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChessData.Library.Tests.ApiTests.LiChessAPI
 {
@@ -37,7 +30,7 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
         /// <summary>
         /// Checks GetMyEmailAddress correctly returns data
         /// </summary>
-        [Fact]
+        [Fact(Skip = "Until configure lichess secret as a github environment secret.")]
         public async Task GetMyEmailAddress_Returns_ValidData()
         {
             Thread.Sleep(3000);
@@ -51,7 +44,7 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
         /// <summary>
         /// Checks GetMyProfile correctly returns data
         /// </summary>
-        [Fact]
+        [Fact(Skip = "Until configure lichess secret as a github environment secret.")]
         public async Task GetMyProfile_Returns_ValidData()
         {
             Thread.Sleep(3000);
@@ -65,14 +58,14 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
         /// <summary>
         /// Checks GetMyPreferences correctly returns data
         /// </summary>
-        [Fact]
+        [Fact(Skip = "Until configure lichess secret as a github environment secret.")]
         public async Task GetMyPreferences_Returns_ValidData()
-        {
+        { 
             Thread.Sleep(3000);
+
             var lichessPreferences = await lichessApi.GetMyPreferences();
             Assert.NotNull(lichessPreferences);
             Assert.True(lichessPreferences.ResponseStatusCode == System.Net.HttpStatusCode.OK);
         }
-
     }
 }

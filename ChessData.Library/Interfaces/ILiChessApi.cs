@@ -8,6 +8,7 @@ namespace ChessData.Library.Interfaces
         #region ACCOUNT ENDPOINTS
         Task<ApiResponse<GetMyLiChessProfile?>> GetMyProfile();
         Task<ApiResponse<GetMyEmailAddressResponse?>> GetMyEmailAddress();
+        Task<ApiResponse<GetMyPreferencesResponse?>> GetMyPreferences();
         #endregion
     }
 }

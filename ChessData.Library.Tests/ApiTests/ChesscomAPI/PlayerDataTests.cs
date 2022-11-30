@@ -69,7 +69,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
             //Assert
             Assert.NotNull(titledPlayers);
             Assert.True(titledPlayers.ResponseData?.TitledPlayers?.Any());
-            Assert.Equal(titledPlayers.ResponseStatusCode, System.Net.HttpStatusCode.OK);   
+            Assert.Equal(titledPlayers.ResponseStatusCode, System.Net.HttpStatusCode.OK);
         }
 
         [Fact]
@@ -79,7 +79,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
 
             // Act
             var playerGames = await chesscomApi.GetPlayerDailyGames("erik");
-            
+
             // Assert
             Assert.NotNull(playerGames);
             Assert.Equal(playerGames.ResponseStatusCode, System.Net.HttpStatusCode.OK);
@@ -117,7 +117,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
             Thread.Sleep(3000);
 
             // Act
-            var playerGames = await chesscomApi.GetPlayerMonthlyGameArchives("erik","2009","10");
+            var playerGames = await chesscomApi.GetPlayerMonthlyGameArchives("erik", "2009", "10");
 
             // Assert
             Assert.NotNull(playerGames);

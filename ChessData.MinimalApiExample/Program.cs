@@ -2,9 +2,9 @@
  * A small minimal api example using our library.
  */
 
+using ChessData.Library.Core.Options;
 using ChessData.Library.Extensions;
 using ChessData.Library.Interfaces;
-using ChessData.Library.Core.Options;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -30,7 +30,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 //Example -> get player profile data
-app.MapGet("/player", async (IChesscomApi api, HttpContext httpContext, string name) => 
+app.MapGet("/player", async (IChesscomApi api, HttpContext httpContext, string name) =>
 {
     var response = await api.GetPlayerProfileData(name);
     if (response == null)

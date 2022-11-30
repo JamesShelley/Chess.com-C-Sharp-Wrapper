@@ -1,13 +1,13 @@
-﻿using ChessData.Library.Core.Json;
-using ChessData.Library.Constants;
+﻿using ChessData.Library.Constants;
+using ChessData.Library.Core.Json;
+using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
+using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
 using ChessData.Library.DTOs.APIs.Chesscom.Players;
+using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
 using ChessData.Library.Interfaces;
 using ChessData.Library.Models;
 using System.Text.Json;
-using ChessData.Library.DTOs.APIs.Chesscom.Clubs;
-using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
-using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 
 namespace ChessData.Library.Core.APIs
 {
@@ -19,14 +19,14 @@ namespace ChessData.Library.Core.APIs
     /// </remarks>
     internal sealed class ChesscomApi : ApiResponseBuilder, IChesscomApi
     {
-        
+
         //Chess.com API works with snakecase
-        static JsonSerializerOptions options = new JsonSerializerOptions
+        private static readonly JsonSerializerOptions options = new()
         {
             PropertyNamingPolicy = SnakeCaseNamingPolicy.Instance
         };
 
-        public ChesscomApi(HttpClient httpClient) : base(httpClient,options) { }
+        public ChesscomApi(HttpClient httpClient) : base(httpClient, options) { }
 
         #region Player Endpoints
 
@@ -101,7 +101,7 @@ namespace ChessData.Library.Core.APIs
             ArgumentException.ThrowIfNullOrEmpty(year, nameof(year));
             ArgumentException.ThrowIfNullOrEmpty(month, nameof(month));
 
-            return await BuildApiResponse<GetPlayerMonthlyArchivesResponse?>($"{EndpointConstants.ChessCom.GET_PLAYER_MONTHLY_ARCHIVES(playerName,year,month)}");
+            return await BuildApiResponse<GetPlayerMonthlyArchivesResponse?>($"{EndpointConstants.ChessCom.GET_PLAYER_MONTHLY_ARCHIVES(playerName, year, month)}");
         }
 
         /// <summary>

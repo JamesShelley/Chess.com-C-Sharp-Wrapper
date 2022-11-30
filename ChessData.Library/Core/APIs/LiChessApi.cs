@@ -9,7 +9,7 @@ namespace ChessData.Library.Core.APIs
     internal sealed class LiChessApi : ApiResponseBuilder, ILiChessApi
     {
         // LiChess API uses CamelCase
-        static JsonSerializerOptions options = new JsonSerializerOptions
+        private static readonly JsonSerializerOptions options = new()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
@@ -32,6 +32,11 @@ namespace ChessData.Library.Core.APIs
         {
             return await BuildApiResponse<GetMyPreferencesResponse?>($"{EndpointConstants.LiChess.GET_MY_PREFERENCES}");
         }
+
+        #endregion
+
+        #region ANALYSIS ENDPOINTS
+
 
         #endregion
     }

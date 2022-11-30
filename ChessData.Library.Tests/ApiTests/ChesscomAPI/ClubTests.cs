@@ -13,7 +13,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
             Timeout = TimeSpan.FromSeconds(60),
             BaseAddress = new Uri("https://api.chess.com")
         });
-         
+
         /// <summary>
         /// Checks the GetClubDetails correctly returns data from https://api.chess.com/pub/club/chess-com-developer-community
         /// </summary>

@@ -9,7 +9,7 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
     public class AccountTests
     {
         private readonly string _oAuthToken;
-        HttpClient client = new HttpClient
+        private readonly HttpClient client = new()
         {
             Timeout = TimeSpan.FromSeconds(60),
             BaseAddress = new Uri("https://lichess.org/api"),
@@ -60,7 +60,7 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
         /// </summary>
         [Fact(Skip = "Until configure lichess secret as a github environment secret.")]
         public async Task GetMyPreferences_Returns_ValidData()
-        { 
+        {
             Thread.Sleep(3000);
 
             var lichessPreferences = await lichessApi.GetMyPreferences();

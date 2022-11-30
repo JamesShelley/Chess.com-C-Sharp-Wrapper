@@ -1,7 +1,7 @@
-﻿using System.Net;
-using System.Text.Json;
+﻿using ChessData.Library.Models;
+using System.Net;
 using System.Net.Http.Json;
-using ChessData.Library.Models;
+using System.Text.Json;
 
 namespace ChessData.Library.Core.APIs
 {

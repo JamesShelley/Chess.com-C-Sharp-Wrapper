@@ -17,9 +17,9 @@ namespace ChessData.Library.DTOs.APIs.Chesscom.Players
             public string? Uuid { get; set; }
             public string? InitialSetup { get; set; }
             public string? Fen { get; set; }
-            public long? StartTime { get; set; }    
+            public long? StartTime { get; set; }
             public string? TimeClass { get; set; }
-            public string? Rules { get; set;}
+            public string? Rules { get; set; }
             public GameResultDto? White { get; set; }
             public GameResultDto? Black { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿using ChessData.Library.Core.APIs;
 
-namespace ChessData.Library.Tests.ApiTests
+namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
 {
     /// <summary>
     /// Tests specific to chess.com api club endpoints

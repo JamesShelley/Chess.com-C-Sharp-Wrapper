@@ -48,6 +48,8 @@
             #region TOURNAMENT ENDPOINTS
 
             internal static string GET_TOURNAMENT(string tournamentName) => $"/pub/tournament/{tournamentName}";
+            internal static string GET_TOURNAMENT_ROUND(string tournamentName, int round) => $"/pub/tournament/{tournamentName}/{round}";
+            internal static string GET_TOURNAMENT_ROUND_GROUP(string tournamentName, int round, int group) => $"/pub/tournament/{tournamentName}/{round}/{group}";
 
             #endregion
 

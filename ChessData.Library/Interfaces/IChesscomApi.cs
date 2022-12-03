@@ -30,6 +30,8 @@ namespace ChessData.Library.Interfaces
 
         #region Tournaments
         Task<ApiResponse<GetTournamentResponse?>> GetTournament(string tournamentName);
+        Task<ApiResponse<GetTournamentRoundResponse?>> GetTournamentRound(string tournamentName, int round);
+        Task<ApiResponse<GetTournamentRoundGroupResponse?>> GetTournamentRoundGroup(string tournamentName, int round, int group);
 
         #endregion
 

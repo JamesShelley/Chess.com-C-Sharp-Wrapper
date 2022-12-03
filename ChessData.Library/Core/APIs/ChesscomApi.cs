@@ -136,8 +136,8 @@ namespace ChessData.Library.Core.APIs
         /// <summary>
         /// Get details about a daily, live and arena tournament.
         /// </summary>
-        /// <param name="clubName">The name of the club</param>
-        /// <returns>An <c>ApiResponse<GetClubDetailsResponse></c> object</returns>
+        /// <param name="tournament">The name of the tournament</param>
+        /// <returns>An <c>ApiResponse<GetTournamentResponse></c> object</returns>
         /// <remarks>
         /// All tournaments-based URLs use the tournament's "URL ID" to specify which tournament you want data for.
         /// https://api.chess.com/pub/tournament/{url-ID}
@@ -147,6 +147,40 @@ namespace ChessData.Library.Core.APIs
         {
             return await BuildApiResponse<GetTournamentResponse?>($"{EndpointConstants.ChessCom.GET_TOURNAMENT(tournamentName)}");
         }
+
+        /// <summary>
+        /// Get details about a tournament's round.
+        /// </summary>
+        /// <param name="tournament">The name of the tournament</param>
+        /// <param name="round">The round number</param>
+        /// <returns>An <c>ApiResponse<GetTournamentRoundResponse></c> object</returns>
+        /// <remarks>
+        /// All tournaments-based URLs use the tournament's "URL ID" to specify which tournament you want data for.
+        /// https://api.chess.com/pub/tournament/{url-ID}
+        ///The url-ID is the same as found in the URL for the tournament's web page on www.chess.com. For example, the url-ID of the Chess.com Developer's Club is -33rd-chesscom-quick-knockouts-1401-1600
+        /// </remarks>
+        public async Task<ApiResponse<GetTournamentRoundResponse?>> GetTournamentRound(string tournamentName, int round)
+        {
+            return await BuildApiResponse<GetTournamentRoundResponse?>($"{EndpointConstants.ChessCom.GET_TOURNAMENT_ROUND(tournamentName, round)}");
+        }
+
+        /// <summary>
+        /// Get details about a tournament's group.
+        /// </summary>
+        /// <param name="tournament">The name of the tournament</param>
+        /// <param name="round">The round number</param>
+        /// <param name="group">The group number</param>
+        /// <returns>An <c>ApiResponse<GetTournamentRoundGroupResponse></c> object</returns>
+        /// <remarks>
+        /// All tournaments-based URLs use the tournament's "URL ID" to specify which tournament you want data for.
+        /// https://api.chess.com/pub/tournament/{url-ID}
+        ///The url-ID is the same as found in the URL for the tournament's web page on www.chess.com. For example, the url-ID of the Chess.com Developer's Club is -33rd-chesscom-quick-knockouts-1401-1600
+        /// </remarks>
+        public async Task<ApiResponse<GetTournamentRoundGroupResponse?>> GetTournamentRoundGroup(string tournamentName, int round, int group)
+        {
+            return await BuildApiResponse<GetTournamentRoundGroupResponse?>($"{EndpointConstants.ChessCom.GET_TOURNAMENT_ROUND_GROUP(tournamentName, round, group)}");
+        }
+
         #endregion
 
         #region Club Endpoints

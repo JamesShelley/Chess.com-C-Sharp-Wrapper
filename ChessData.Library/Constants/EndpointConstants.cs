@@ -59,6 +59,11 @@
             internal static string GET_RANDOM_PUZZLE = "/pub/puzzle/random";
 
             #endregion
+
+            #region COUNTRY ENDPOINTS
+            internal static string GET_COUNTRY_DETAILS(string countryIsoCode) => $"/pub/country/{countryIsoCode}";
+
+            #endregion
         }
 
         #endregion

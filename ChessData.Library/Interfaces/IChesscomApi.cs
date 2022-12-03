@@ -4,6 +4,7 @@ using ChessData.Library.DTOs.APIs.Chesscom.Players;
 using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
 using ChessData.Library.DTOs.APIs.Chesscom.Tournaments;
+using ChessData.Library.DTOs.APIs.Chesscom.Countries;
 using ChessData.Library.Models;
 
 namespace ChessData.Library.Interfaces
@@ -59,6 +60,11 @@ namespace ChessData.Library.Interfaces
         #region Leaderboards
 
         Task<ApiResponse<GetLeaderboardsResponse?>> GetLeaderboards();
+
+        #endregion
+
+        #region Country
+        Task<ApiResponse<GetCountryDetailsResponse?>> GetCountryDetailsResponse(string countryIsoCode);
 
         #endregion
     }

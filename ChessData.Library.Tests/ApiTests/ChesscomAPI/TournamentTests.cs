@@ -2,7 +2,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI;
 using ChessData.Library.Core.APIs;
 
     /// <summary>
-    /// Tests specific to chess.com api club endpoints
+    /// Tests specific to chess.com api tournament endpoints
     /// </summary>
     [Collection("ChessDotComApiTests")]
     public sealed class TournamentTests
@@ -36,11 +36,11 @@ using ChessData.Library.Core.APIs;
         public async Task GetTournamentRound_Returns_Valid_Results()
         {
             Thread.Sleep(3000);
-            var tournament = await chessApi.GetTournamentRound("-33rd-chesscom-quick-knockouts-1401-1600", 1);
-            Assert.NotNull(tournament);
-            Assert.True(tournament.ResponseStatusCode == System.Net.HttpStatusCode.OK);
-            Assert.Equal(67, tournament.ResponseData?.Groups?.Count);
-            Assert.Equal(399,tournament.ResponseData?.Players?.Count);
+            var tournamentRound = await chessApi.GetTournamentRound("-33rd-chesscom-quick-knockouts-1401-1600", 1);
+            Assert.NotNull(tournamentRound);
+            Assert.True(tournamentRound.ResponseStatusCode == System.Net.HttpStatusCode.OK);
+            Assert.Equal(67, tournamentRound.ResponseData?.Groups?.Count);
+            Assert.Equal(399,tournamentRound.ResponseData?.Players?.Count);
         }
 
         /// <summary>
@@ -50,10 +50,10 @@ using ChessData.Library.Core.APIs;
         public async Task GetTournamentRoundGroup_Returns_Valid_Results()
         {
             Thread.Sleep(3000);
-            var tournament = await chessApi.GetTournamentRoundGroup("-33rd-chesscom-quick-knockouts-1401-1600",1,1);
-            Assert.NotNull(tournament);
-            Assert.True(tournament.ResponseStatusCode == System.Net.HttpStatusCode.OK);
-            Assert.Equal(20, tournament.ResponseData?.Games?.Count);
-            Assert.Equal(5,tournament.ResponseData?.Players?.Count);
+            var tournamentRoundGroups = await chessApi.GetTournamentRoundGroup("-33rd-chesscom-quick-knockouts-1401-1600",1,1);
+            Assert.NotNull(tournamentRoundGroups);
+            Assert.True(tournamentRoundGroups.ResponseStatusCode == System.Net.HttpStatusCode.OK);
+            Assert.Equal(20, tournamentRoundGroups.ResponseData?.Games?.Count);
+            Assert.Equal(5,tournamentRoundGroups.ResponseData?.Players?.Count);
         }
     }

@@ -3,6 +3,9 @@ using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 
 namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
 {
+    /// <summary>
+    /// Tests specific to chess.com api puzzle endpoints
+    /// </summary>
     [Collection("ChessDotComApiTests")]
     public class PuzzleTests
     {

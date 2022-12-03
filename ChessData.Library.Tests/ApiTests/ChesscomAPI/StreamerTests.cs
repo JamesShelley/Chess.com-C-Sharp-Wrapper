@@ -3,7 +3,7 @@
 namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
 {
     /// <summary>
-    /// Tests specific to chess.com api club endpoints
+    /// Tests specific to chess.com api streamer endpoints
     /// </summary>
     [Collection("ChessDotComApiTests")]
     public sealed class StreamerTests

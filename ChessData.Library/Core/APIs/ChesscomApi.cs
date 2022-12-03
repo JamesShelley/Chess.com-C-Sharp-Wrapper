@@ -6,6 +6,7 @@ using ChessData.Library.DTOs.APIs.Chesscom.Players;
 using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
 using ChessData.Library.DTOs.APIs.Chesscom.Tournaments;
+using ChessData.Library.DTOs.APIs.Chesscom.Countries;
 using ChessData.Library.Interfaces;
 using ChessData.Library.Models;
 using System.Text.Json;
@@ -259,6 +260,22 @@ namespace ChessData.Library.Core.APIs
 
         #endregion
 
+        #region Country endpoints
+        
+        /// <summary>
+        /// Get additional details about a country.
+        /// </summary>
+        /// <param name="countryIsoCode">The countries iso code</param>
+        /// <returns>An <c>ApiResponse<GetCountryDetailsResponse></c> object</returns>
+        /// <remarks>
+        /// All country-based URLs use the country's 2-character ISO 3166 code (capitalized) to specify which country you want data for. https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        /// </remarks>
+        public async Task<ApiResponse<GetCountryDetailsResponse?>> GetCountryDetailsResponse(string countryIsoCode)
+        {
+            return await BuildApiResponse<GetCountryDetailsResponse?>($"{EndpointConstants.ChessCom.GET_COUNTRY_DETAILS(countryIsoCode)}");
+        }
+
+        #endregion
     }
 
 }

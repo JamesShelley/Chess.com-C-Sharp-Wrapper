@@ -8,7 +8,6 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
     [Collection("LichessApiTests")]
     public class AnalysisTests
     {
-        private readonly string _oAuthToken;
         private readonly HttpClient client = new()
         {
             Timeout = TimeSpan.FromSeconds(60),
@@ -18,12 +17,6 @@ namespace ChessData.Library.Tests.ApiTests.LiChessAPI
 
         public AnalysisTests()
         {
-            var configuration = new ConfigurationBuilder()
-            .AddUserSecrets(Assembly.GetExecutingAssembly(), true)
-            .Build();
-
-            _oAuthToken = configuration["LichessToken"];
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _oAuthToken);
             lichessApi = new LiChessApi(client);
         }
 

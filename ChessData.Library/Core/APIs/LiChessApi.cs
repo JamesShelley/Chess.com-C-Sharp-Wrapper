@@ -1,5 +1,6 @@
 ﻿using ChessData.Library.Constants;
 using ChessData.Library.DTOs.APIs.LiChess.Account;
+using ChessData.Library.DTOs.APIs.LiChess.Analysis;
 using ChessData.Library.Interfaces;
 using ChessData.Library.Models;
 using System.Text.Json;
@@ -37,6 +38,11 @@ namespace ChessData.Library.Core.APIs
 
         #region ANALYSIS ENDPOINTS
 
+         public async Task<ApiResponse<GetPositionCloudEvaluationResponse?>> GetPositionCloudAnalysis(string fen, int multiPv = 1, string variant = "standard")
+        {
+            ArgumentException.ThrowIfNullOrEmpty(fen);
+            return await BuildApiResponse<GetPositionCloudEvaluationResponse?>($"{EndpointConstants.LiChess.GET_POSITION_ANALYSIS(fen, multiPv, variant)}");
+        }
 
         #endregion
     }

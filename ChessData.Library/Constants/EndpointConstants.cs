@@ -79,6 +79,11 @@
             internal static string GET_MY_PREFERENCES = "/api/account/preferences";
 
             #endregion
+
+            #region ANALYSIS endpoints
+            internal static string GET_POSITION_ANALYSIS(string fen, int multiPv, string variant) => $"/api/cloud-eval?fen={fen}&multiPv={multiPv}&variant={variant}";
+
+            #endregion
         }
 
         #endregion

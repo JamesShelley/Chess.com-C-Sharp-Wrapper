@@ -122,7 +122,7 @@ namespace ChessData.Library.Tests.ApiTests.ChesscomAPI
             // Assert
             Assert.NotNull(playerGames);
             Assert.NotNull(playerGames.ResponseData?.Games);
-            Assert.Equal(playerGames.ResponseData?.Games?.Count, 46);
+            Assert.Equal(46,playerGames.ResponseData?.Games?.Count);
             Assert.Equal(playerGames.ResponseStatusCode, System.Net.HttpStatusCode.OK);
         }
 

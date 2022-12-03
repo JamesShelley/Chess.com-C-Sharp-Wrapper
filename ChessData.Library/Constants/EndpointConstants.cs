@@ -45,6 +45,12 @@
 
             #endregion
 
+            #region TOURNAMENT ENDPOINTS
+
+            internal static string GET_TOURNAMENT(string tournamentName) => $"/pub/tournament/{tournamentName}";
+
+            #endregion
+
             #region PUZZLE ENDPOINTS
 
             internal static string GET_DAILY_PUZZLE = "/pub/puzzle";

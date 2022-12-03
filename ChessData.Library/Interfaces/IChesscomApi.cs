@@ -3,6 +3,7 @@ using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
 using ChessData.Library.DTOs.APIs.Chesscom.Players;
 using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
+using ChessData.Library.DTOs.APIs.Chesscom.Tournaments;
 using ChessData.Library.Models;
 
 namespace ChessData.Library.Interfaces
@@ -28,6 +29,7 @@ namespace ChessData.Library.Interfaces
         #endregion
 
         #region Tournaments
+        Task<ApiResponse<GetTournamentResponse?>> GetTournament(string tournamentName);
 
         #endregion
 

@@ -5,6 +5,7 @@ using ChessData.Library.DTOs.APIs.Chesscom.Leaderboards;
 using ChessData.Library.DTOs.APIs.Chesscom.Players;
 using ChessData.Library.DTOs.APIs.Chesscom.Puzzles;
 using ChessData.Library.DTOs.APIs.Chesscom.Streamers;
+using ChessData.Library.DTOs.APIs.Chesscom.Tournaments;
 using ChessData.Library.Interfaces;
 using ChessData.Library.Models;
 using System.Text.Json;
@@ -128,6 +129,24 @@ namespace ChessData.Library.Core.APIs
             return await BuildApiResponse<GetStreamersResponse?>($"{EndpointConstants.ChessCom.GET_STREAMERS}");
         }
 
+        #endregion
+        
+        #region Tournament Endpoints
+        
+        /// <summary>
+        /// Get details about a daily, live and arena tournament.
+        /// </summary>
+        /// <param name="clubName">The name of the club</param>
+        /// <returns>An <c>ApiResponse<GetClubDetailsResponse></c> object</returns>
+        /// <remarks>
+        /// All tournaments-based URLs use the tournament's "URL ID" to specify which tournament you want data for.
+        /// https://api.chess.com/pub/tournament/{url-ID}
+        ///The url-ID is the same as found in the URL for the tournament's web page on www.chess.com. For example, the url-ID of the Chess.com Developer's Club is -33rd-chesscom-quick-knockouts-1401-1600
+        /// </remarks>
+        public async Task<ApiResponse<GetTournamentResponse?>> GetTournament(string tournamentName)
+        {
+            return await BuildApiResponse<GetTournamentResponse?>($"{EndpointConstants.ChessCom.GET_TOURNAMENT(tournamentName)}");
+        }
         #endregion
 
         #region Club Endpoints
